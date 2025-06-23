@@ -1,3 +1,4 @@
-FROM ubuntu:latest
-RUN apt-get update && apt install -y iputils-ping
-CMD echo "updated the ubuntu"
+FROM nginx:stable-alpine
+COPY . /usr/share/nginx/html
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
